@@ -78,3 +78,24 @@ To see the image status:
 To run the application in docker:
 ```docker run hello-docker```
 output: the console log inside app.js
+
+
+## Linux Command Line
+- Docker is built on basic Linux concepts
+
+### Linux Distributions
+- Ubuntu
+- Debian
+- Alpine (Very small)
+- Fedora
+- CentOS
+- more and more
+
+#### Running Linux
+- We can find a distribution in https://hub.docker.com i will use ubuntu
+- To install the dist we can run `docker pull ubuntu` to get the image
+- But i will use `docker run ubuntu`, if have the image will use if not will pull and then run
+- `docker ps` list the containers but ubuntu is stoped
+- `docker ps -a` show also stoped containers
+- `docker run -it ubuntu` this start the container in interact mode with the shell
+- with this we are able to run Linux commands
