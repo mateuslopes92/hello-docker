@@ -99,3 +99,24 @@ output: the console log inside app.js
 - `docker ps -a` show also stoped containers
 - `docker run -it ubuntu` this start the container in interact mode with the shell
 - with this we are able to run Linux commands
+
+### Package Managers
+- Like we have yarn, npm, pip and so on.
+- On linux we have `apt (advanced package tool)`
+- As we have a fresh new ubuntu we need to update our apt package list, this also need to be done when want to install a lib to make sure apt will have it
+- The command to update is `apt update`
+- With this we can try install nano for example `apt install nano`
+- To remove we run `apt remove nano`
+
+### Linux File System
+On linux everything is a file
+On linux the folder structure is like this:
+- bin -> binaries and programs
+- boot -> files related to booting
+- dev -> short for devices (files needed to access devices)
+- etc -> short for editable techs configuration (configuration files)
+- home -> home directors for users
+- root -> home director for the root user, only root user can access
+- lib -> library files like software files dependencies
+- var -> short for variable (files which are updated frequently like log files or application data)
+- proc -> files that represent running processes
