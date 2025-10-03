@@ -120,3 +120,14 @@ On linux the folder structure is like this:
 - lib -> library files like software files dependencies
 - var -> short for variable (files which are updated frequently like log files or application data)
 - proc -> files that represent running processes
+
+### Navigating the File System
+Here i will cover only few helpful commands to navigate on terminal with Linux
+- `pwd` - print work directory
+- `ls` - short for list(list files in current directory)
+- `cd` - to change current directory
+- `mkdir` - create a directory
+- `touch` - create a file
+- `mv` - move or rename files and directories
+- `rm` to remove files or directory
+
