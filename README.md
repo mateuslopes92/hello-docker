@@ -131,3 +131,12 @@ Here i will cover only few helpful commands to navigate on terminal with Linux
 - `mv` - move or rename files and directories
 - `rm` to remove files or directory
 
+## Docker Compose
+
+### Running multi container apps
+
+### Docker Networking
+
+### Database migration
+
+### Running automated tests
