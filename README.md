@@ -75,6 +75,12 @@ if inside the directory that have dockerfile use the period to reference current
 To see the image status:
 ```docker image ls```
 
+To list images:
+```docker image ls```
+
+To list only images ids:
+```docker image ls -q```
+
 To run the application in docker:
 ```docker run hello-docker```
 output: the console log inside app.js
@@ -132,6 +138,11 @@ Here i will cover only few helpful commands to navigate on terminal with Linux
 - `rm` to remove files or directory
 
 ## Docker Compose
+  I will clean up all docker images i have first of all:
+  listing all image ids: `docker image ls -q`
+  removing all images: `docker image rm $(docker image ls -q)`
+  if got error of running containers `docker container rm -f $(docker container ls -a -q)`
+  `-a` apply the commands for stoped containers as well
 
 ### Running multi container apps
 
