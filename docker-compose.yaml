@@ -1,0 +1,12 @@
+services:
+  app:
+    build: ./
+    ports:
+      - 3000:3000
+    # environment:
+    #   PORT: 3000
+  # example using image
+  # db:
+  #   image: mongo:4.0-xenial
+  #   ports:
+  #     - 27017:27017 #default port

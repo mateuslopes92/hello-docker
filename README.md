@@ -144,7 +144,11 @@ Here i will cover only few helpful commands to navigate on terminal with Linux
   if got error of running containers `docker container rm -f $(docker container ls -a -q)`
   `-a` apply the commands for stoped containers as well
 
+  After having DockerFile and docker-compose file we can run `docker-compose build`
+
 ### Running multi container apps
+Each application should have your own DockerFile
+All the configs should be specified in docker-compose file
 
 ### Docker Networking
 
