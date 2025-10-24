@@ -144,7 +144,7 @@ Here i will cover only few helpful commands to navigate on terminal with Linux
   if got error of running containers `docker container rm -f $(docker container ls -a -q)`
   `-a` apply the commands for stoped containers as well
 
-  After having DockerFile and docker-compose file we can run `docker-compose build`
+  After having DockerFile and docker-compose file we can run `docker-compose build` or `docker compose up --build`
 
 ### Running multi container apps
 Each application should have your own DockerFile
@@ -155,3 +155,64 @@ All the configs should be specified in docker-compose file
 ### Database migration
 
 ### Running automated tests
+
+
+## Updates on App.js
+```
+const express = require("express");
+const app = express();
+
+const PORT = process.env.PORT || 3000;
+
+app.get("/", (req, res) => {
+  res.send("Docker + Express is working!");
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
+```
+
+### Updated Dockerfile
+```
+# using node image from alpine distribution of linux
+FROM node:alpine
+
+# using '.' will copy all the files to a new directory called /app in docker image file system
+COPY . /app
+
+# To know we are inside of app directory and we dont need to prefix the below commands with /app/app.js for example
+WORKDIR /app
+
+# copy package.json before the rest (better caching)
+COPY package*.json ./
+
+# install dependencies
+RUN npm install
+
+# expose port
+EXPOSE 3000
+
+# CMD run a command, here is the command to node run our app
+# run the app
+CMD ["node", "app.js"]
+```
+
+### Updated docker-compose
+```
+services:
+  app:
+    build: ./
+    ports:
+      - 3000:3000
+    environment:
+      PORT: 3000
+    volumes:
+      - .:/app # maps your local folder to container /app
+      - /app/node_modules # prevents overwriting node_modules inside the container
+```
+
+### Docker running
+```
+docker compose up --build
+```

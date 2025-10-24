@@ -1,0 +1,15 @@
+{
+  "name": "hello-docker",
+  "version": "1.0.0",
+  "description": "## What is docker? - Platform to consistently build, run and ship applications in a consistent matter(run on same way on diff machines) - Package with defined versions - Isolated environments",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
