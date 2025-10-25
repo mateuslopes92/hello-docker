@@ -146,11 +146,26 @@ Here i will cover only few helpful commands to navigate on terminal with Linux
 
   After having DockerFile and docker-compose file we can run `docker-compose build` or `docker compose up --build`
 
+  To take the application down we do `docker-compose down`
+
 ### Running multi container apps
 Each application should have your own DockerFile
 All the configs should be specified in docker-compose file
 
 ### Docker Networking
+Docker compose create an network and add the containers to the network, the containers can talk to each other.
+
+To see the networks on the machine: `docker network ls`
+
+The hosts(containers) are the applications we define on the docker compose file.
+
+To access the network with shell we can do `docker exec -it {id(first 3 chars) of the container} sh`
+
+To access with root `docker exec -it -u root {id(first 3 chars) of the container} sh`
+
+We can check doing a ping `ping app`
+
+We can also check the IP address: `ifconfig`
 
 ### Database migration
 
